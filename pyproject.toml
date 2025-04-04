@@ -3,12 +3,13 @@ name = "pie"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = "==3.12.9"
 dependencies = [
-    "mypy>=1.15.0",
     "pydantic>=2.10.6",
     "pytest>=8.3.5",
     "requests>=2.32.3",
     "ruff>=0.11.0",
     "youtube-transcript-api>=1.0.2",
+    "beautifulsoup4>=4.12.2",
+    "spacy[apple]>=3.8.5",
 ]

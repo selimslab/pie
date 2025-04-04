@@ -1,3 +1,8 @@
+#!/usr/bin/env -S uv run --script
+# /// script
+# dependencies = ["youtube_transcript_api", "requests"]
+# ///
+
 from youtube_transcript_api import YouTubeTranscriptApi
 import logging
 from pathlib import Path
@@ -59,16 +64,15 @@ def process_video(video_id, output_dir=Path('transcripts')):
 
 def run_interactive_mode(output_dir=Path('transcripts')):
     """Run the CLI in interactive mode"""
-    print("YouTube Transcript Downloader - Interactive Mode")
-    print("Enter 'quit' or 'exit' to end the program")
+    print("YouTube Transcript Downloader")
     
     while True:
-        video_id = input("\nEnter YouTube video ID: ").strip()
-        
-        if video_id.lower() in ['exit', 'quit', 'q']:
-            print("Exiting program")
+        video_id = input("\nVideo ID: ").strip()
+
+        if video_id == "q":
+            print("Exiting")
             break
-            
+
         if not video_id:
             print("Please enter a valid video ID")
             continue
